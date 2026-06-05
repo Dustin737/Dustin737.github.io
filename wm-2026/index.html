@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FIFA World Cup 2026</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <h1 class="logo">🏆 FIFA WM 2026</h1>
+            <div class="header-actions">
+                <button class="favorites-btn" id="favoritesBtn">
+                    <span class="heart-icon">❤️</span>
+                    <span class="favorites-count">0</span>
+                </button>
+                <button class="settings-btn" id="settingsBtn">⚙️</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Settings Modal -->
+    <div class="modal" id="settingsModal">
+        <div class="modal-content">
+            <button class="close-btn" id="closeSettings">&times;</button>
+            <h2>Einstellungen</h2>
+            
+            <div class="settings-section">
+                <button class="section-toggle" data-section="background">
+                    <span class="toggle-arrow">▼</span>
+                    <span>Hintergrundfarbe</span>
+                </button>
+                <div class="color-options" id="background" style="display: block;">
+                    <div class="color-grid">
+                        <button class="color-btn" data-color="white" data-type="background" style="background-color: white; border: 2px solid #333;"></button>
+                        <button class="color-btn" data-color="black" data-type="background" style="background-color: black;"></button>
+                        <button class="color-btn" data-color="red" data-type="background" style="background-color: red;"></button>
+                        <button class="color-btn" data-color="yellow" data-type="background" style="background-color: yellow;"></button>
+                        <button class="color-btn" data-color="blue" data-type="background" style="background-color: blue;"></button>
+                        <button class="color-btn" data-color="gray" data-type="background" style="background-color: gray;"></button>
+                        <button class="color-btn" data-color="purple" data-type="background" style="background-color: purple;"></button>
+                        <button class="color-btn" data-color="green" data-type="background" style="background-color: green;"></button>
+                        <button class="color-btn" data-color="lightgreen" data-type="background" style="background-color: lightgreen;"></button>
+                        <button class="color-btn" data-color="darkgreen" data-type="background" style="background-color: darkgreen;"></button>
+                        <button class="color-btn" data-color="lightblue" data-type="background" style="background-color: lightblue;"></button>
+                        <button class="color-btn" data-color="darkblue" data-type="background" style="background-color: darkblue;"></button>
+                        <button class="color-btn" data-color="germany" data-type="background" style="background: linear-gradient(to right, black 0%, black 33%, red 33%, red 66%, gold 66%, gold 100%);"></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="settings-section">
+                <button class="section-toggle" data-section="cards">
+                    <span class="toggle-arrow">▶</span>
+                    <span>Kartenhintergrundfarbe</span>
+                </button>
+                <div class="color-options" id="cards" style="display: none;">
+                    <div class="color-grid">
+                        <button class="color-btn" data-color="white" data-type="cards" style="background-color: white; border: 2px solid #333;"></button>
+                        <button class="color-btn" data-color="black" data-type="cards" style="background-color: black;"></button>
+                        <button class="color-btn" data-color="red" data-type="cards" style="background-color: red;"></button>
+                        <button class="color-btn" data-color="yellow" data-type="cards" style="background-color: yellow;"></button>
+                        <button class="color-btn" data-color="blue" data-type="cards" style="background-color: blue;"></button>
+                        <button class="color-btn" data-color="gray" data-type="cards" style="background-color: gray;"></button>
+                        <button class="color-btn" data-color="purple" data-type="cards" style="background-color: purple;"></button>
+                        <button class="color-btn" data-color="green" data-type="cards" style="background-color: green;"></button>
+                        <button class="color-btn" data-color="lightgreen" data-type="cards" style="background-color: lightgreen;"></button>
+                        <button class="color-btn" data-color="darkgreen" data-type="cards" style="background-color: darkgreen;"></button>
+                        <button class="color-btn" data-color="lightblue" data-type="cards" style="background-color: lightblue;"></button>
+                        <button class="color-btn" data-color="darkblue" data-type="cards" style="background-color: darkblue;"></button>
+                        <button class="color-btn" data-color="germany" data-type="cards" style="background: linear-gradient(to right, black 0%, black 33%, red 33%, red 66%, gold 66%, gold 100%);"></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="settings-section">
+                <button class="section-toggle" data-section="header">
+                    <span class="toggle-arrow">▶</span>
+                    <span>Header Farbe</span>
+                </button>
+                <div class="color-options" id="header" style="display: none;">
+                    <div class="color-grid">
+                        <button class="color-btn" data-color="white" data-type="header" style="background-color: white; border: 2px solid #333;"></button>
+                        <button class="color-btn" data-color="black" data-type="header" style="background-color: black;"></button>
+                        <button class="color-btn" data-color="red" data-type="header" style="background-color: red;"></button>
+                        <button class="color-btn" data-color="yellow" data-type="header" style="background-color: yellow;"></button>
+                        <button class="color-btn" data-color="blue" data-type="header" style="background-color: blue;"></button>
+                        <button class="color-btn" data-color="gray" data-type="header" style="background-color: gray;"></button>
+                        <button class="color-btn" data-color="purple" data-type="header" style="background-color: purple;"></button>
+                        <button class="color-btn" data-color="green" data-type="header" style="background-color: green;"></button>
+                        <button class="color-btn" data-color="lightgreen" data-type="header" style="background-color: lightgreen;"></button>
+                        <button class="color-btn" data-color="darkgreen" data-type="header" style="background-color: darkgreen;"></button>
+                        <button class="color-btn" data-color="lightblue" data-type="header" style="background-color: lightblue;"></button>
+                        <button class="color-btn" data-color="darkblue" data-type="header" style="background-color: darkblue;"></button>
+                        <button class="color-btn" data-color="germany" data-type="header" style="background: linear-gradient(to right, black 0%, black 33%, red 33%, red 66%, gold 66%, gold 100%);"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Favorites Modal -->
+    <div class="modal" id="favoritesModal">
+        <div class="modal-content">
+            <button class="close-btn" id="closeFavorites">&times;</button>
+            <h2>❤️ Meine Favoriten</h2>
+            <div id="favoritesList" class="favorites-list"></div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-container">
+        <!-- Navigation Tabs -->
+        <nav class="nav-tabs">
+            <button class="tab-btn active" data-tab="matches">Alle Spiele</button>
+            <button class="tab-btn" data-tab="teams">Teams</button>
+            <button class="tab-btn" data-tab="predictions">Prognosen</button>
+        </nav>
+
+        <!-- Matches Tab -->
+        <section id="matches" class="tab-content active">
+            <!-- Search Bar -->
+            <div class="search-container">
+                <input type="text" id="searchInput" class="search-bar" placeholder="Nach Datum, Team oder Ort suchen...">
+                <div class="filter-buttons">
+                    <button class="filter-btn" data-filter="all">Alle</button>
+                    <button class="filter-btn" data-filter="group">Gruppenphase</button>
+                    <button class="filter-btn" data-filter="knockout">K.O.-Phase</button>
+                </div>
+            </div>
+
+            <!-- Matches Grid -->
+            <div id="matchesGrid" class="matches-grid"></div>
+        </section>
+
+        <!-- Teams Tab -->
+        <section id="teams" class="tab-content">
+            <div class="teams-container">
+                <div id="teamsGrid" class="teams-grid"></div>
+            </div>
+        </section>
+
+        <!-- Predictions Tab -->
+        <section id="predictions" class="tab-content">
+            <div class="predictions-container">
+                <h2>Meine Prognosen</h2>
+                <div id="predictionsList" class="predictions-list"></div>
+            </div>
+        </section>
+    </main>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
